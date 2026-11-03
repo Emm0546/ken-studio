@@ -87,6 +87,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background:
+    radial-gradient(
+      ellipse at 80% 35%,
+      rgba(182, 155, 117, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #f1eee7 0%, #eae4d9 100%);
 }
 
 .hero-content {
