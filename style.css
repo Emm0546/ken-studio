@@ -1,5 +1,9 @@
 /* GENERAL RESET */
-
+body {
+  background-color: #f1eee7;
+  color: #171717;
+  font-family: "DM Sans", sans-serif;
+}
 * {
   margin: 0;
   padding: 0;
@@ -592,4 +596,13 @@ body {
     flex-direction: column;
     gap: 12px;
   }
+}
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+.logo,
+.footer-logo {
+  font-family: "Manrope", sans-serif;
 }
