@@ -456,6 +456,36 @@ body {
   color: #a6a19a;
   font-size: 12px;
 }
+/* PORTFOLIO IMAGES */
+
+.work-image {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.work-image:hover img {
+  transform: scale(1.05);
+}
+
+.work-image span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  z-index: 1;
+}
 /* RESPONSIVE DESIGN */
 
 /* TABLETS */
@@ -572,10 +602,6 @@ body {
     min-height: 280px;
   }
 
-  .work-image {
-    height: 280px;
-  }
-
   .section-heading {
     margin-bottom: 40px;
   }
@@ -596,6 +622,9 @@ body {
     flex-direction: column;
     gap: 12px;
   }
+  .work-image {
+    height: 240px;
+  }
 }
 /* TYPOGRAPHY */
 
@@ -605,4 +634,25 @@ h3,
 .logo,
 .footer-logo {
   font-family: "Manrope", sans-serif;
+}
+/* HERO ANIMATION */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-bottom {
+  animation: fadeUp 1s ease 0.3s both;
 }
