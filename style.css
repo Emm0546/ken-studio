@@ -146,3 +146,163 @@ body {
   letter-spacing: 1.5px;
   color: #77716a;
 }
+/* INTRODUCTION SECTION */
+
+.introduction {
+  padding: 120px 7%;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 60px;
+}
+
+.intro-label p {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #8b765a;
+}
+
+.intro-content {
+  max-width: 850px;
+}
+
+.intro-content h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.2;
+  letter-spacing: -2px;
+  font-weight: 500;
+}
+
+.intro-content h2 span {
+  color: #8b765a;
+}
+
+.intro-content p {
+  max-width: 600px;
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #66615a;
+}
+/* SERVICES SECTION */
+
+.services {
+  padding: 120px 7%;
+  background-color: #f1eee7;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 65px;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #8b765a;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+  font-weight: 500;
+}
+
+.section-heading h2 span {
+  color: #8b765a;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 35px;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-number {
+  font-size: 12px;
+  color: #8b765a;
+  margin-bottom: 55px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #77716a;
+}
+
+.service-arrow {
+  margin-top: auto;
+  padding-top: 25px;
+  font-size: 20px;
+  color: #8b765a;
+}
+/* SELECTED WORK */
+
+.work {
+  padding: 120px 7%;
+  background-color: #ffffff;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.work-image {
+  height: 380px;
+  padding: 25px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.work-image span {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.work-image-one {
+  background-color: #38352f;
+}
+
+.work-image-two {
+  background-color: #77716a;
+}
+
+.work-info {
+  padding-top: 22px;
+}
+
+.work-info h3 {
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.work-info p {
+  font-size: 13px;
+  color: #77716a;
+}
