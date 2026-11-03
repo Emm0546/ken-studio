@@ -306,3 +306,290 @@ body {
   font-size: 13px;
   color: #77716a;
 }
+/* ABOUT SECTION */
+
+.about {
+  padding: 120px 7%;
+  background-color: #f1eee7;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 60px;
+}
+
+.about-label p {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #8b765a;
+}
+
+.about-content {
+  max-width: 900px;
+}
+
+.about-content h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+  font-weight: 500;
+}
+
+.about-content h2 span {
+  color: #8b765a;
+}
+
+.about-content > p {
+  max-width: 600px;
+  margin-top: 25px;
+  color: #66615a;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 65px;
+}
+
+.about-values span {
+  color: #8b765a;
+  font-size: 12px;
+}
+
+.about-values h3 {
+  margin-top: 18px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.about-values p {
+  margin-top: 12px;
+  color: #77716a;
+  font-size: 13px;
+  line-height: 1.7;
+}
+/* CONTACT SECTION */
+
+.contact {
+  padding: 120px 7%;
+  background-color: #171717;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact h2 {
+  max-width: 850px;
+  margin: 25px auto;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.1;
+  letter-spacing: -3px;
+  font-weight: 500;
+}
+
+.contact h2 span {
+  color: #b69b75;
+}
+
+.contact > p:not(.section-label) {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #b7b3ad;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 16px 28px;
+  background-color: #b69b75;
+  color: #171717;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #ffffff;
+}
+/* FOOTER */
+
+.footer {
+  padding: 55px 7% 25px;
+  background-color: #171717;
+  color: #ffffff;
+  border-top: 1px solid #393939;
+}
+
+.footer-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.footer-logo span {
+  color: #b69b75;
+}
+
+.footer > p {
+  margin-top: 12px;
+  color: #a6a19a;
+  font-size: 13px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+  padding-top: 20px;
+  border-top: 1px solid #393939;
+}
+
+.footer-bottom p {
+  color: #a6a19a;
+  font-size: 12px;
+}
+/* RESPONSIVE DESIGN */
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 25px 5%;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .introduction,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 90px 5%;
+  }
+
+  .services,
+  .work {
+    padding: 90px 5%;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-values {
+    gap: 20px;
+  }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 22px 5%;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-contact {
+    padding: 11px 14px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 75vh;
+    padding: 75px 5% 25px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .introduction,
+  .about {
+    padding: 75px 5%;
+  }
+
+  .intro-content h2,
+  .about-content h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .services,
+  .work {
+    padding: 75px 5%;
+  }
+
+  .services-grid,
+  .work-grid,
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 280px;
+  }
+
+  .work-image {
+    height: 280px;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .contact {
+    padding: 85px 5%;
+  }
+
+  .contact h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .footer {
+    padding: 45px 5% 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
