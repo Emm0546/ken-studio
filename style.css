@@ -319,7 +319,19 @@ header {
 .work-info {
   padding-top: 22px;
 }
+.work-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #8b765a;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
+.work-link:hover {
+  color: #171717;
+}
 .work-info h3 {
   font-size: 21px;
   font-weight: 500;
