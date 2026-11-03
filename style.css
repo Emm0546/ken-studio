@@ -523,6 +523,13 @@ body {
   .about-values {
     gap: 20px;
   }
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    max-width: 500px;
+  }
 }
 
 /* MOBILE PHONES */
@@ -625,6 +632,23 @@ body {
   .work-image {
     height: 240px;
   }
+  .visual-frame {
+    min-height: 300px;
+}
+
+.visual-circle {
+    width: 150px;
+    height: 150px;
+}
+
+.visual-circle::before {
+    width: 115px;
+    height: 115px;
+}
+
+.visual-circle span {
+    font-size: 42px;
+}
 }
 /* TYPOGRAPHY */
 
@@ -655,4 +679,78 @@ h3,
 
 .hero-bottom {
   animation: fadeUp 1s ease 0.3s both;
+}
+/* HERO VISUAL */
+
+.hero-main {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-visual {
+  width: 100%;
+}
+
+.visual-frame {
+  min-height: 390px;
+  background-color: #e5ded2;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.visual-top,
+.visual-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.visual-center {
+  text-align: center;
+}
+
+.visual-circle {
+  width: 190px;
+  height: 190px;
+  border: 1px solid #8b765a;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 25px;
+  position: relative;
+}
+
+.visual-circle::before {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border: 1px solid #b69b75;
+  border-radius: 50%;
+}
+
+.visual-circle span {
+  font-family: "Manrope", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  color: #171717;
+}
+
+.visual-center p {
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 2px;
+}
+
+.visual-bottom {
+  color: #77716a;
 }
