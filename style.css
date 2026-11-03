@@ -23,6 +23,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 28px 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f1eee7;
 }
 
 .logo {
@@ -65,6 +71,13 @@ body {
 
 .nav-contact:hover {
   background-color: #b69b75;
+}
+header {
+  height: 85px;
+}
+
+.navbar {
+  box-sizing: border-box;
 }
 /* HERO SECTION */
 
@@ -634,21 +647,21 @@ body {
   }
   .visual-frame {
     min-height: 300px;
-}
+  }
 
-.visual-circle {
+  .visual-circle {
     width: 150px;
     height: 150px;
-}
+  }
 
-.visual-circle::before {
+  .visual-circle::before {
     width: 115px;
     height: 115px;
-}
+  }
 
-.visual-circle span {
+  .visual-circle span {
     font-size: 42px;
-}
+  }
 }
 /* TYPOGRAPHY */
 
