@@ -1,0 +1,148 @@
+/* GENERAL RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1eee7;
+  color: #171717;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 7%;
+}
+
+.logo {
+  text-decoration: none;
+  color: #171717;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #b69b75;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #171717;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #b69b75;
+}
+
+.nav-contact {
+  text-decoration: none;
+  background-color: #171717;
+  color: #ffffff;
+  padding: 13px 22px;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-contact:hover {
+  background-color: #b69b75;
+}
+/* HERO SECTION */
+
+.hero {
+  min-height: 85vh;
+  padding: 100px 7% 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-content {
+  max-width: 950px;
+}
+
+.hero-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #8b765a;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -4px;
+  font-weight: 600;
+  max-width: 950px;
+}
+
+.hero h1 span {
+  color: #8b765a;
+}
+
+.hero-description {
+  max-width: 550px;
+  margin-top: 30px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #66615a;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.hero-primary,
+.hero-secondary {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero-primary {
+  background-color: #171717;
+  color: #ffffff;
+  padding: 16px 25px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-primary:hover {
+  background-color: #8b765a;
+}
+
+.hero-secondary {
+  color: #171717;
+  border-bottom: 1px solid #171717;
+  padding-bottom: 5px;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #d8d2c8;
+  padding-top: 20px;
+  margin-top: 80px;
+}
+
+.hero-bottom p {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #77716a;
+}
