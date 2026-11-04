@@ -33,12 +33,23 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Our Work</a></li>
-          <li><a href="#studio">About</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#work" data-i18n="nav.work">Our Work</a></li>
+          <li><a href="#studio" data-i18n="nav.about">About</a></li>
+          <li>
+            <button
+              class="lang-toggle"
+              type="button"
+              aria-label="Change language"
+            >
+              FR
+            </button>
+          </li>
         </ul>
 
-        <a href="#contact" class="nav-contact">Start a Project ↗</a>
+        <a href="#contact" class="nav-contact" data-i18n="nav.start"
+          >Start a Project ↗</a
+        >
       </nav>
     </header>
 
@@ -46,42 +57,49 @@
       <section class="hero">
         <div class="hero-main">
           <div class="hero-content">
-            <p class="hero-label">DIGITAL SOLUTIONS & CREATIVE EXPERIENCES</p>
+            <p class="hero-label" data-i18n="hero.label">
+              DIGITAL SOLUTIONS &amp; CREATIVE EXPERIENCES
+            </p>
 
-            <h1>
+            <h1 data-i18n="hero.title">
               We build digital experiences
               <span>that move businesses forward.</span>
             </h1>
 
-            <p class="hero-description">
+            <p class="hero-description" data-i18n="hero.desc">
               We help ambitious businesses strengthen their online presence,
               connect with customers, and grow through thoughtful digital
               solutions.
             </p>
 
             <div class="hero-buttons">
-              <a href="#contact" class="hero-primary">Start a Project ↗</a>
-              <a href="#work" class="hero-secondary">Explore Our Work</a>
+              <a href="#contact" class="hero-primary" data-i18n="hero.primary"
+                >Start a Project ↗</a
+              >
+              <a href="#work" class="hero-secondary" data-i18n="hero.secondary"
+                >Explore Our Work</a
+              >
             </div>
           </div>
         </div>
         <div class="hero-bottom">
-          <p>STRATEGY. DESIGN. TECHNOLOGY.</p>
-          <p>BASED IN ABIDJAN, CÔTE D'IVOIRE</p>
+          <p data-i18n="hero.b1">STRATEGY. DESIGN. TECHNOLOGY.</p>
+          <p data-i18n="hero.b2">BASED IN ABIDJAN, CÔTE D'IVOIRE</p>
         </div>
       </section>
+
       <section class="introduction" id="about">
         <div class="intro-label">
-          <p>01 — WHO WE ARE</p>
+          <p data-i18n="intro.label">01 — WHO WE ARE</p>
         </div>
 
         <div class="intro-content">
-          <h2>
+          <h2 data-i18n="intro.title">
             Technology should do more than make a business look good.
             <span>It should help it move forward.</span>
           </h2>
 
-          <p>
+          <p data-i18n="intro.text">
             Ken Studio is a digital solutions studio focused on helping
             businesses build a stronger digital presence, improve how they
             connect with customers, and create better experiences through
@@ -92,15 +110,19 @@
 
       <section class="services" id="services">
         <div class="section-heading">
-          <p class="section-label">02 — WHAT WE DO</p>
-          <h2>Digital solutions for <span>real business needs.</span></h2>
+          <p class="section-label" data-i18n="services.label">
+            02 — WHAT WE DO
+          </p>
+          <h2 data-i18n="services.title">
+            Digital solutions for <span>real business needs.</span>
+          </h2>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
             <span class="service-number">01</span>
-            <h3>Web Design & Development</h3>
-            <p>
+            <h3 data-i18n="s1.title">Web Design &amp; Development</h3>
+            <p data-i18n="s1.text">
               Professional websites and landing pages that present your business
               clearly, build trust, and turn visitors into enquiries.
             </p>
@@ -109,8 +131,8 @@
 
           <article class="service-card">
             <span class="service-number">02</span>
-            <h3>Digital Presence</h3>
-            <p>
+            <h3 data-i18n="s2.title">Digital Presence</h3>
+            <p data-i18n="s2.text">
               Help customers discover and connect with your business through
               digital catalogues, online business profiles, and WhatsApp
               integration.
@@ -120,8 +142,8 @@
 
           <article class="service-card">
             <span class="service-number">03</span>
-            <h3>Business Digital Solutions</h3>
-            <p>
+            <h3 data-i18n="s3.title">Business Digital Solutions</h3>
+            <p data-i18n="s3.text">
               Practical digital tools that help businesses organize information,
               manage enquiries, and make better-informed decisions.
             </p>
@@ -132,45 +154,46 @@
 
       <section class="work" id="work">
         <div class="section-heading">
-          <p class="section-label">03 — SELECTED WORK</p>
-          <h2>Ideas turned into <span>digital experiences.</span></h2>
+          <p class="section-label" data-i18n="work.label">03 — SELECTED WORK</p>
+          <h2 data-i18n="work.title">
+            Ideas turned into <span>digital experiences.</span>
+          </h2>
         </div>
 
         <div class="work-grid">
           <article class="work-card">
-            <div class="work-image">
-              <img
-                src="assets/images/restaurant.jpg"
-                alt="LULU restaurant website concept"
-              />
-              <span>01 / WEB DESIGN</span>
+            <div class="work-image work-image-one">
+              <span data-i18n="w1.tag">01 / WEB DESIGN</span>
             </div>
-
             <div class="work-info">
-              <h3>LULU — Restaurant Experience</h3>
-              <p>Website Design · Hospitality</p>
+              <h3 data-i18n="w1.title">Restaurant Website Demo</h3>
+              <p data-i18n="w1.meta">Website Design · Hospitality</p>
 
               <a
-                href="https://emm0546.github.io/lulu-restaurant/"
+                href="https://emm0546.github.io/votre-restaurant/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="work-link"
+                data-i18n="w1.link"
+                >View Live Demo ↗</a
               >
-                View Live Concept ↗
-              </a>
             </div>
           </article>
+
           <article class="work-card">
-            <div class="work-image">
-              <img
-                src="assets/images/real-estate.jpg"
-                alt="Modern luxury residential property"
-              />
-              <span>02 / DIGITAL EXPERIENCE</span>
+            <div class="work-image work-image-two">
+              <span data-i18n="w2.tag">02 / BILINGUAL WEBSITE</span>
             </div>
             <div class="work-info">
-              <h3>Real Estate Showcase</h3>
-              <p>Website Design · Real Estate</p>
+              <h3 data-i18n="w2.title">Church Website — EN / FR</h3>
+              <p data-i18n="w2.meta">Website Design · Community</p>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="work-link"
+                data-i18n="w2.link"
+                >View Live Site ↗</a
+              >
             </div>
           </article>
         </div>
@@ -178,16 +201,16 @@
 
       <section class="about" id="studio">
         <div class="about-label">
-          <p>04 — OUR APPROACH</p>
+          <p data-i18n="about.label">04 — OUR APPROACH</p>
         </div>
 
         <div class="about-content">
-          <h2>
+          <h2 data-i18n="about.title">
             We don't just build digital products.
             <span>We build with purpose.</span>
           </h2>
 
-          <p>
+          <p data-i18n="about.text">
             Ken Studio is an independent digital solutions studio based in
             Abidjan, Côte d'Ivoire. We combine creative thinking, technology,
             and a practical understanding of business needs to create digital
@@ -197,34 +220,44 @@
           <div class="about-values">
             <div>
               <span>01</span>
-              <h3>Strategy</h3>
-              <p>Understanding the needs behind every project.</p>
+              <h3 data-i18n="v1.title">Strategy</h3>
+              <p data-i18n="v1.text">
+                Understanding the needs behind every project.
+              </p>
             </div>
 
             <div>
               <span>02</span>
-              <h3>Design</h3>
-              <p>Creating clear and meaningful experiences.</p>
+              <h3 data-i18n="v2.title">Design</h3>
+              <p data-i18n="v2.text">
+                Creating clear and meaningful experiences.
+              </p>
             </div>
 
             <div>
               <span>03</span>
-              <h3>Technology</h3>
-              <p>Building practical digital solutions.</p>
+              <h3 data-i18n="v3.title">Technology</h3>
+              <p data-i18n="v3.text">Building practical digital solutions.</p>
             </div>
           </div>
+
+          <p class="about-signature" data-i18n="about.sig">
+            Konan Emmanuel Nassé · Web developer, Abidjan
+          </p>
         </div>
       </section>
 
       <section class="contact" id="contact">
-        <p class="section-label">05 — LET'S WORK TOGETHER</p>
+        <p class="section-label" data-i18n="contact.label">
+          05 — LET'S WORK TOGETHER
+        </p>
 
-        <h2>
+        <h2 data-i18n="contact.title">
           Have a project in mind?
           <span>Let's make it happen.</span>
         </h2>
 
-        <p>
+        <p data-i18n="contact.text">
           Whether you need a website, a stronger digital presence, or a
           practical digital solution, let's talk about your goals.
         </p>
@@ -234,6 +267,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="contact-button"
+          data-i18n="contact.button"
         >
           Start a Conversation ↗
         </a>
@@ -244,19 +278,30 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="#" class="footer-logo">KEN STUDIO<span>.</span></a>
-          <p>Digital Solutions & Creative Experiences.</p>
+          <p data-i18n="footer.tagline">
+            Digital Solutions &amp; Creative Experiences.
+          </p>
         </div>
 
         <div class="footer-socials">
-          <h3>Let's Connect</h3>
-          <a href="YOUR_LINKEDIN_URL">LinkedIn ↗</a>
-          <a href="YOUR_INSTAGRAM_URL">Instagram ↗</a>
-          <a href="YOUR_WHATSAPP_URL">WhatsApp ↗</a>
+          <h3 data-i18n="footer.connect">Let's Connect</h3>
+          <a
+            href="https://wa.me/2250546918383"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp ↗</a
+          >
+          <a
+            href="https://github.com/Emm0546"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub ↗</a
+          >
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Ken Studio. All rights reserved.</p>
+        <p data-i18n="footer.rights">© 2026 Ken Studio. All rights reserved.</p>
         <p>Abidjan, Côte d'Ivoire</p>
       </div>
     </footer>
