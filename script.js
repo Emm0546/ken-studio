@@ -18,7 +18,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
 /* ===== 2. SCROLL REVEAL ===== */
 
 const revealItems = document.querySelectorAll(
-  ".section-heading, .intro-label, .intro-content, .service-card, .work-card, .about-label, .about-content, .contact > *"
+  ".section-heading, .intro-label, .intro-content, .service-card, .work-card, .about-label, .about-content, .contact > *",
 );
 
 revealItems.forEach((item) => item.classList.add("reveal"));
@@ -32,13 +32,12 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.15 },
 );
 
 revealItems.forEach((item) => observer.observe(item));
 
 /* ===== 3. FRENCH / ENGLISH ===== */
-/* The English text stays in the HTML. Only the French is stored here. */
 
 const translations = {
   fr: {
@@ -116,7 +115,6 @@ const translations = {
 const langToggle = document.querySelector(".lang-toggle");
 const i18nItems = document.querySelectorAll("[data-i18n]");
 
-// Save the original English text of each element once
 i18nItems.forEach((item) => {
   item.dataset.en = item.innerHTML;
 });
@@ -141,7 +139,16 @@ langToggle.addEventListener("click", () => {
   setLanguage(nextLang);
 });
 
-// On load: use the saved choice, otherwise French if the browser is in French
 const savedLang = localStorage.getItem("ken-language");
 const browserLang = navigator.language.startsWith("fr") ? "fr" : "en";
 setLanguage(savedLang || browserLang);
+
+document.querySelectorAll('a[href^="https://wa.me"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    gtag("event", "whatsapp_click");
+  });
+});
+
+langToggle.addEventListener("click", () => {
+  gtag("event", "language_change", { language: document.documentElement.lang });
+});
