@@ -82,9 +82,9 @@ const translations = {
     "w1.title": "Démo de site pour restaurant",
     "w1.meta": "Design web · Restauration",
     "w1.link": "Voir la démo ↗",
-    "w2.tag": "02 / SITE BILINGUE",
-    "w2.title": "Site d’église — EN / FR",
-    "w2.meta": "Design web · Communauté",
+    "w2.tag": "02 / Menu Digital",
+    "w2.title": "Menu Digital",
+    "w2.meta": "Design web · Intégration Whatsapp",
     "w2.link": "Voir le site ↗",
 
     "about.label": "04 — NOTRE APPROCHE",
