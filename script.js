@@ -18,7 +18,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
 /* ===== 2. SCROLL REVEAL ===== */
 
 const revealItems = document.querySelectorAll(
-  ".section-heading, .intro-label, .intro-content, .service-card, .work-card, .about-label, .about-content, .contact > *",
+  ".section-heading, .intro-label, .intro-content, .service-card, .shop-card, .work-card, .about-label, .about-content, .contact > *",
 );
 
 revealItems.forEach((item) => item.classList.add("reveal"));
@@ -37,6 +37,97 @@ const observer = new IntersectionObserver(
 
 revealItems.forEach((item) => observer.observe(item));
 
+/* ===== 2B. SHOP (config + WhatsApp order links) ===== */
+
+const SHOP_PHONE = "2250546918383";
+
+// EDIT HERE. status: "soon" or "live". price: number in FCFA, or null = "on quote"
+const SHOP = {
+  kit: { status: "soon", price: 3000 },
+  menu: { status: "live", price: null },
+};
+
+const SHOP_NAMES = {
+  kit: { fr: "le Kit Vendeur", en: "the Seller Kit" },
+  menu: { fr: "le Menu WhatsApp", en: "the WhatsApp Menu" },
+};
+
+const SHOP_TEXT = {
+  fr: {
+    soon: "Bientôt",
+    buy: "Commander sur WhatsApp ↗",
+    notify: "Être prévenu ↗",
+    quote: "Sur devis",
+  },
+  en: {
+    soon: "Coming soon",
+    buy: "Order on WhatsApp ↗",
+    notify: "Notify me ↗",
+    quote: "On quote",
+  },
+};
+
+// Short reference the buyer puts in the payment note, e.g. KS-1105-4F2
+function shopRef() {
+  const d = new Date();
+  const mmdd =
+    String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0");
+  return "KS-" + mmdd + "-" + Math.random().toString(36).slice(2, 5).toUpperCase();
+}
+
+function shopLang() {
+  return document.documentElement.lang === "fr" ? "fr" : "en";
+}
+
+function shopMessage(id) {
+  const lang = shopLang();
+  const name = SHOP_NAMES[id][lang];
+
+  if (SHOP[id].status === "soon") {
+    return lang === "fr"
+      ? "Bonjour Ken Studio ! Prévenez-moi dès que " + name + " est disponible."
+      : "Hello Ken Studio! Please let me know when " + name + " is available.";
+  }
+
+  const ref = shopRef();
+  return lang === "fr"
+    ? "Bonjour Ken Studio ! Je veux " + name + ". (réf " + ref + ")"
+    : "Hello Ken Studio! I want " + name + ". (ref " + ref + ")";
+}
+
+function renderShop() {
+  const t = SHOP_TEXT[shopLang()];
+
+  document.querySelectorAll("[data-product]").forEach((card) => {
+    const id = card.dataset.product;
+    const item = SHOP[id];
+
+    const badge = card.querySelector(".shop-badge");
+    badge.textContent = t.soon;
+    badge.hidden = item.status !== "soon";
+
+    card.querySelector(".shop-price").textContent =
+      item.price === null ? t.quote : item.price.toLocaleString("fr-FR") + " FCFA";
+
+    card.querySelector(".shop-cta").textContent =
+      item.status === "soon" ? t.notify : t.buy;
+  });
+}
+
+document.querySelectorAll("[data-product] .shop-cta").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const id = button.closest("[data-product]").dataset.product;
+    const url =
+      "https://wa.me/" + SHOP_PHONE + "?text=" + encodeURIComponent(shopMessage(id));
+
+    if (typeof gtag === "function") {
+      gtag("event", "shop_click", { product: id, status: SHOP[id].status });
+    }
+    window.open(url, "_blank", "noopener");
+  });
+});
+
 /* ===== 3. FRENCH / ENGLISH ===== */
 
 const translations = {
@@ -45,6 +136,23 @@ const translations = {
     "nav.work": "Réalisations",
     "nav.about": "À propos",
     "nav.start": "Démarrer un projet ↗",
+    "nav.shop": "Boutique",
+
+    "shop.label": "03 — BOUTIQUE",
+    "shop.title":
+      "Des outils prêts à l’emploi <span>pour vendre sur WhatsApp.</span>",
+    "shop.intro":
+      "Simples, locaux, pensés pour la façon dont on vend vraiment en Côte d’Ivoire : WhatsApp et mobile money.",
+    "shop.kit.tag": "MODÈLES + SCRIPTS",
+    "shop.kit.title": "Kit Vendeur",
+    "shop.kit.text":
+      "Modèles Canva et scripts WhatsApp prêts à copier pour les vendeurs Instagram, TikTok et WhatsApp : liste de prix, promos, infos de livraison et relances de paiement.",
+    "shop.kit.meta": "Livré sur WhatsApp · Paiement mobile money",
+    "shop.menu.tag": "SERVICE + OUTIL",
+    "shop.menu.title": "Menu WhatsApp",
+    "shop.menu.text":
+      "Vos clients choisissent leurs articles et les quantités, puis envoient la commande directement sur votre WhatsApp. Configuré à l’image de votre commerce.",
+    "shop.demo": "Voir la démo ↗",
 
     "hero.label": "SOLUTIONS DIGITALES & EXPÉRIENCES CRÉATIVES",
     "hero.title":
@@ -75,7 +183,7 @@ const translations = {
     "s3.text":
       "Des outils pratiques qui aident les entreprises à organiser leurs informations, gérer les demandes et prendre de meilleures décisions.",
 
-    "work.label": "03 — RÉALISATIONS",
+    "work.label": "04 — RÉALISATIONS",
     "work.title":
       "Des idées transformées en <span>expériences digitales.</span>",
     "w1.tag": "01 / DESIGN WEB",
@@ -87,7 +195,7 @@ const translations = {
     "w2.meta": "Menu digital · Intégration WhatsApp",
     "w2.link": "Voir la démo ↗",
 
-    "about.label": "04 — NOTRE APPROCHE",
+    "about.label": "05 — NOTRE APPROCHE",
     "about.title":
       "Nous ne créons pas que des produits digitaux. <span>Nous créons avec un but.</span>",
     "about.text":
@@ -100,7 +208,7 @@ const translations = {
     "v3.text": "Concevoir des solutions digitales pratiques.",
     "about.sig": "Konan Emmanuel Nassé · Développeur web, Abidjan",
 
-    "contact.label": "05 — TRAVAILLONS ENSEMBLE",
+    "contact.label": "06 — TRAVAILLONS ENSEMBLE",
     "contact.title": "Un projet en tête ? <span>Concrétisons-le.</span>",
     "contact.text":
       "Que vous ayez besoin d’un site web, d’une présence digitale plus forte ou d’une solution digitale pratique, parlons de vos objectifs.",
@@ -130,6 +238,7 @@ function setLanguage(lang) {
   });
 
   document.documentElement.lang = lang;
+  renderShop();
   langToggle.textContent = lang === "fr" ? "EN" : "FR";
   localStorage.setItem("ken-language", lang);
 }

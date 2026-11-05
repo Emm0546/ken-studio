@@ -844,3 +844,139 @@ h3,
   background-color: #171717;
   color: #ffffff;
 }
+
+/* SHOP */
+
+.shop {
+  padding: 120px 7%;
+  background-color: #e9e3d8;
+}
+
+.shop-intro {
+  margin-top: 22px;
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #66615a;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.shop-card {
+  background-color: #ffffff;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 340px;
+  transition: transform 0.3s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-6px);
+}
+
+.shop-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.shop-tag {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #8b765a;
+}
+
+.shop-badge {
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border: 1px solid #8b765a;
+  border-radius: 20px;
+  color: #8b765a;
+}
+
+.shop-card h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.shop-card > p:not(.shop-meta) {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #77716a;
+}
+
+.shop-meta {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #8b765a;
+}
+
+.shop-demo {
+  color: #8b765a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shop-demo:hover {
+  color: #171717;
+}
+
+.shop-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.shop-price {
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.shop-cta {
+  text-decoration: none;
+  background-color: #171717;
+  color: #ffffff;
+  padding: 14px 22px;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.shop-cta:hover {
+  background-color: #8b765a;
+}
+
+@media (max-width: 900px) {
+  .shop {
+    padding: 90px 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  .shop {
+    padding: 75px 5%;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-card {
+    min-height: 300px;
+  }
+}
