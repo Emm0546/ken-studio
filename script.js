@@ -41,7 +41,6 @@ revealItems.forEach((item) => observer.observe(item));
 
 const SHOP_PHONE = "2250546918383";
 
-// EDIT HERE. status: "soon" or "live". price: number in FCFA, or null = "on quote"
 const SHOP = {
   kit: { status: "soon", price: 3000 },
   menu: { status: "live", price: null },
@@ -71,8 +70,11 @@ const SHOP_TEXT = {
 function shopRef() {
   const d = new Date();
   const mmdd =
-    String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0");
-  return "KS-" + mmdd + "-" + Math.random().toString(36).slice(2, 5).toUpperCase();
+    String(d.getMonth() + 1).padStart(2, "0") +
+    String(d.getDate()).padStart(2, "0");
+  return (
+    "KS-" + mmdd + "-" + Math.random().toString(36).slice(2, 5).toUpperCase()
+  );
 }
 
 function shopLang() {
@@ -107,7 +109,9 @@ function renderShop() {
     badge.hidden = item.status !== "soon";
 
     card.querySelector(".shop-price").textContent =
-      item.price === null ? t.quote : item.price.toLocaleString("fr-FR") + " FCFA";
+      item.price === null
+        ? t.quote
+        : item.price.toLocaleString("fr-FR") + " FCFA";
 
     card.querySelector(".shop-cta").textContent =
       item.status === "soon" ? t.notify : t.buy;
@@ -119,7 +123,10 @@ document.querySelectorAll("[data-product] .shop-cta").forEach((button) => {
     event.preventDefault();
     const id = button.closest("[data-product]").dataset.product;
     const url =
-      "https://wa.me/" + SHOP_PHONE + "?text=" + encodeURIComponent(shopMessage(id));
+      "https://wa.me/" +
+      SHOP_PHONE +
+      "?text=" +
+      encodeURIComponent(shopMessage(id));
 
     if (typeof gtag === "function") {
       gtag("event", "shop_click", { product: id, status: SHOP[id].status });
@@ -127,7 +134,21 @@ document.querySelectorAll("[data-product] .shop-cta").forEach((button) => {
     window.open(url, "_blank", "noopener");
   });
 });
+/* ===== 2C. CONTACT BUTTON MESSAGE ===== */
 
+const CONTACT_MESSAGES = {
+  fr: "Bonjour Ken Studio ! Je suis intéressé par vos services digitaux.",
+  en: "Hello Ken Studio! I’m interested in your digital services.",
+};
+
+function updateContactLink() {
+  const link = document.querySelector("#contact-button");
+  const lang = document.documentElement.lang === "fr" ? "fr" : "en";
+
+  link.href =
+    "https://wa.me/2250546918383?text=" +
+    encodeURIComponent(CONTACT_MESSAGES[lang]);
+}
 /* ===== 3. FRENCH / ENGLISH ===== */
 
 const translations = {
@@ -239,6 +260,7 @@ function setLanguage(lang) {
 
   document.documentElement.lang = lang;
   renderShop();
+  updateContactLink();
   langToggle.textContent = lang === "fr" ? "EN" : "FR";
   localStorage.setItem("ken-language", lang);
 }
